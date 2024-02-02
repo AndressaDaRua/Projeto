@@ -1,0 +1,147 @@
+* {
+  margin: 0; /*(são comandos pra zerar as as configurações iniciais)*/
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --switch-gr-url: url(./assets/moon-stars.svg);
+}
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --switch-gr-url: url(./assets/sun.svg);
+}
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  ---- o comando anterior não é tão necessário
+  O cover funciona pq o BODY não tem tamanho 
+  POSSO POR TUDO DENTRO DE UM background
+  background-size: cover;
+*/
+  background: var(--bg-url) no-repeat top center/cover;
+  /* background: color image repeat posicion/size 
+cor, imagem, repetição posição e tamanho
+*/
+}
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+#container {
+  /* chama o id do html*/
+  width: 360px; /* largura*/
+  margin: 56px auto 0px; /* posso colocar auto para direita e esquerda, mas não funcionar na parte de cima*/
+  padding: 0 24px;
+}
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+#profile img {
+  display: block;
+  width: 112px; /*posso tirar a altura*/
+  margin: auto;
+}
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+#switch{
+    position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-gr-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  top:50%;
+  left:0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+.light #switch button{
+  right: 0;
+  left: initial;
+}
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  border: 1px solid var(--stroke-color);
+  background: var(--surface-color);
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+}
+/*links*/
+ul {
+  list-style: none; /* none para tirar os pontinhos
+  1px solid red;
+  como deve ser feito */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--surface-color);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+#social-links {
+  display: flex;
+  padding: 24px;
+  justify-content: center;
+  align-items: central;
+  gap: 16px;
+  font-size: 24px;
+}
+#social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+#social-links a:hover {
+  background: var(--surface-color);
+  border-radius: 50%;
+}
+footer {
+  display: flex;
+  padding: 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 171.429% */
+}
